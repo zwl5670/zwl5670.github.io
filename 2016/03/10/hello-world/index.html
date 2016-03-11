@@ -11,22 +11,22 @@
     
 
     
-    <meta name="description" content="##1、添加jar包 将名为libs的文件夹放在您项目根目录下（里面有 BmobPay_版本号.jar 和3个支付宝的jar一共四个jar文件）
-##2、添加权限和内容
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162">
+    <meta name="description" content="1、添加jar包 将名为libs的文件夹放在您项目根目录下（里面有 BmobPay_版本号.jar 和3个支付宝的jar一共四个jar文件）
+2、添加权限和内容&amp;lt;!-- alipay sdk permission begin --&amp;gt;  
+    &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android第三方支付——Bmob支付总结">
 <meta property="og:url" content="http://zwl5670.github.io/2016/03/10/hello-world/index.html">
 <meta property="og:site_name" content="Zwl的博客">
-<meta property="og:description" content="##1、添加jar包 将名为libs的文件夹放在您项目根目录下（里面有 BmobPay_版本号.jar 和3个支付宝的jar一共四个jar文件）
-##2、添加权限和内容
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162">
-<meta property="og:updated_time" content="2016-03-11T03:50:11.303Z">
+<meta property="og:description" content="1、添加jar包 将名为libs的文件夹放在您项目根目录下（里面有 BmobPay_版本号.jar 和3个支付宝的jar一共四个jar文件）
+2、添加权限和内容&amp;lt;!-- alipay sdk permission begin --&amp;gt;  
+    &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot">
+<meta property="og:updated_time" content="2016-03-11T04:04:38.620Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android第三方支付——Bmob支付总结">
-<meta name="twitter:description" content="##1、添加jar包 将名为libs的文件夹放在您项目根目录下（里面有 BmobPay_版本号.jar 和3个支付宝的jar一共四个jar文件）
-##2、添加权限和内容
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162">
+<meta name="twitter:description" content="1、添加jar包 将名为libs的文件夹放在您项目根目录下（里面有 BmobPay_版本号.jar 和3个支付宝的jar一共四个jar文件）
+2、添加权限和内容&amp;lt;!-- alipay sdk permission begin --&amp;gt;  
+    &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot">
 
     
     <link rel="alternative" href="atom.xml" title="Zwl的博客" type="application/atom+xml">
@@ -102,14 +102,233 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、添加jar包"><span class="toc-number">1.</span> <span class="toc-text">1、添加jar包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、添加权限和内容"><span class="toc-number">2.</span> <span class="toc-text">2、添加权限和内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、类库说明"><span class="toc-number">3.</span> <span class="toc-text">3、类库说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、示例代码"><span class="toc-number">4.</span> <span class="toc-text">4、示例代码</span></a></li></ol>
 		
 		</div>
 		
-		<p>##1、添加jar包<br> 将名为libs的文件夹放在您项目根目录下（里面有 BmobPay_版本号.jar 和3个支付宝的jar一共四个jar文件）</p>
-<p>##2、添加权限和内容</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br></pre></td><td class="code"><pre><span class="line">    &lt;!-- alipay sdk permission begin --&gt;  </span><br><span class="line">        &lt;uses-permission android:name="android.permission.INTERNET" /&gt;  </span><br><span class="line">        &lt;uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /&gt;  </span><br><span class="line">        &lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /&gt;  </span><br><span class="line">        &lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;  </span><br><span class="line">        &lt;uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /&gt;  </span><br><span class="line">        &lt;uses-permission android:name="android.permission.READ_PHONE_STATE" /&gt;  </span><br><span class="line">    &lt;!-- alipay sdk permission end --&gt;  </span><br><span class="line">```       </span><br><span class="line">  </span><br><span class="line">```javascript</span><br><span class="line">    &lt;!-- bmob pay sdk activity begin ,please put below code into application tag --&gt;  </span><br><span class="line">    &lt;activity  </span><br><span class="line">        android:name="com.alipay.sdk.app.H5PayActivity"  </span><br><span class="line">        android:configChanges="orientation|keyboardHidden|navigation"  </span><br><span class="line">        android:exported="false"  </span><br><span class="line">        android:screenOrientation="behind"  </span><br><span class="line">        android:windowSoftInputMode="adjustResize|stateHidden" &gt;  </span><br><span class="line">    &lt;/activity&gt;  </span><br><span class="line">    &lt;activity  </span><br><span class="line">        android:name="com.bmob.pay.tool.PayActivity"  </span><br><span class="line">        android:screenOrientation="portrait"  </span><br><span class="line">        android:theme="@android:style/Theme.Translucent" /&gt;  </span><br><span class="line">    &lt;!-- bmob pay sdk activity end --&gt;  </span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##3、类库说明</span><br><span class="line">com.bmob.pay.tool.BmobPay</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">* pay(double price, String name, PayListener listener)</span><br><span class="line">* pay(double price, String name, String body, PayListener listener)</span><br><span class="line">* PayListener     支付结果监听类com.bmob.pay.tool.PayListener 有成功、失败、未知结果、返回订单号等方法</span><br><span class="line"></span><br><span class="line">    &lt;table class="table table-bordered table-striped table-condensed"&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;类型&lt;/td&gt;   </span><br><span class="line">            &lt;td&gt;名称&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;说明&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;double&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;price&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;商品的价格,建议测试用0.02&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;String&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;name&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;商品的名称,请注意不要有违禁字眼,可以为空只允许中文、数字、英文和下划线、英文破折号，否则过滤&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;String&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;body&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;商品的详情描述,请注意不要有违禁字眼,可以为空只允许中文、数字、英文和下划线、英文破折号，否则过滤&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">* payByWX(double price, String name, PayListener listener)</span><br><span class="line">* payByWX(double price, String name, String body, PayListener listener)</span><br><span class="line">调用微信支付，要安装插件(如果没有安装,会监听器的fail方法会返回-3错误码)，插件在sdk文档的plugin文件夹下，demo有通过assets安装的示例</span><br><span class="line">* query(String orderId, OrderQueryListener listener)</span><br><span class="line"></span><br><span class="line">    &lt;table class="table table-bordered table-striped table-condensed"&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;类型&lt;/td&gt;   </span><br><span class="line">            &lt;td&gt;名称&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;说明&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;String&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;orderId&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;支付订单号,不可为空&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;OrderQueryListener&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;listener&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;查询结果监听类com.bmob.pay.tool.OrderQueryListener有成功、失败等方法&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        </span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">##4、示例代码</span><br><span class="line"></span><br><span class="line">```javascript</span><br><span class="line">    package com.subzero.dictionary.pay;  </span><br><span class="line">  </span><br><span class="line">    import java.io.File;  </span><br><span class="line">    import java.io.FileOutputStream;  </span><br><span class="line">    import java.io.InputStream;  </span><br><span class="line">    import android.app.Activity;  </span><br><span class="line">    import android.app.ProgressDialog;  </span><br><span class="line">    import android.content.Context;  </span><br><span class="line">    import android.content.Intent;  </span><br><span class="line">    import android.net.Uri;  </span><br><span class="line">    import android.os.Environment;  </span><br><span class="line">    import android.widget.Toast;  </span><br><span class="line">    import com.bmob.pay.tool.BmobPay;  </span><br><span class="line">    import com.bmob.pay.tool.PayListener;  </span><br><span class="line">  </span><br><span class="line">    /** </span><br><span class="line">     * Bmob支付宝支付示例 </span><br><span class="line">    * @link http://docs.bmob.cn/androidpay/index.html?menukey=fast_start&amp;key=start_android_pay </span><br><span class="line">    */  </span><br><span class="line">    public class Pay &#123;  </span><br><span class="line">  </span><br><span class="line">        // 申请的Bmob AppId  </span><br><span class="line">        private String APPID = "换成自己申请的&lt;span style="font-family: Arial, Helvetica, sans-serif;"&gt;AppId&lt;/span&gt;&lt;span style="font-family: Arial, Helvetica, sans-serif;"&gt;";&lt;/span&gt;  </span><br><span class="line">        private BmobPay bmobPay;  </span><br><span class="line">  </span><br><span class="line">        private ProgressDialog dialog;  </span><br><span class="line">  </span><br><span class="line">        private Context context;  </span><br><span class="line">  </span><br><span class="line">        public Pay(Context context) &#123;  </span><br><span class="line">            this.context = context;  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">        // 调用支付宝支付  </span><br><span class="line">        public void payByAli(String name, final double price) &#123;  </span><br><span class="line">            // 必须先初始化  </span><br><span class="line">            BmobPay.init(context, APPID);  </span><br><span class="line">  </span><br><span class="line">            // 初始化BmobPay对象,可以在支付时再初始化  </span><br><span class="line">            bmobPay = new BmobPay((Activity) context);  </span><br><span class="line">            showDialog("正在获取订单...");  </span><br><span class="line">            /** </span><br><span class="line">            * name 商品名称 price 价格 </span><br><span class="line">            */  </span><br><span class="line">            bmobPay.pay(price, name, "来自Android客户端", new PayListener() &#123;  </span><br><span class="line">            // 因为网络等原因,支付结果未知(小概率事件),出于保险起见稍后手动查询  </span><br><span class="line">            @Override  </span><br><span class="line">            public void unknow() &#123;  </span><br><span class="line">                Toast.makeText(context, "支付结果未知,请稍后手动查询", Toast.LENGTH_SHORT)  </span><br><span class="line">                        .show();  </span><br><span class="line">                hideDialog();  </span><br><span class="line">            &#125;  </span><br><span class="line">  </span><br><span class="line">            // 支付成功,如果金额较大请手动查询确认  </span><br><span class="line">            @Override  </span><br><span class="line">            public void succeed() &#123;  </span><br><span class="line">                Toast.makeText(context, "支付成功!", Toast.LENGTH_SHORT).show();  </span><br><span class="line">                hideDialog();  </span><br><span class="line">            &#125;  </span><br><span class="line">  </span><br><span class="line">            // 无论成功与否,返回订单号  </span><br><span class="line">            @Override  </span><br><span class="line">            public void orderId(String orderId) &#123;  </span><br><span class="line">                // 此处应该保存订单号,比如保存进数据库等,以便以后查询  </span><br><span class="line">                showDialog("获取订单成功!请等待跳转到支付页面~");  </span><br><span class="line">            &#125;  </span><br><span class="line">  </span><br><span class="line">            // 支付失败,原因可能是用户中断支付操作,也可能是网络原因  </span><br><span class="line">            @Override  </span><br><span class="line">            public void fail(int code, String reason) &#123;  </span><br><span class="line">                Toast.makeText(context, "支付中断!", Toast.LENGTH_SHORT).show();  </span><br><span class="line">                hideDialog();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    void showDialog(String message) &#123;  </span><br><span class="line">        if (dialog == null) &#123;  </span><br><span class="line">            dialog = new ProgressDialog(context);  </span><br><span class="line">            dialog.setCancelable(false);  </span><br><span class="line">        &#125;  </span><br><span class="line">        dialog.setMessage(message);  </span><br><span class="line">        dialog.show();  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    void hideDialog() &#123;  </span><br><span class="line">        if (dialog != null &amp;&amp; dialog.isShowing())  </span><br><span class="line">            try &#123;  </span><br><span class="line">                dialog.dismiss();  </span><br><span class="line">            &#125; catch (Exception e) &#123;  </span><br><span class="line">            &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    void installBmobPayPlugin(String fileName) &#123;  </span><br><span class="line">        try &#123;  </span><br><span class="line">            InputStream is = context.getAssets().open(fileName);  </span><br><span class="line">            File file = new File(Environment.getExternalStorageDirectory()  </span><br><span class="line">                    + File.separator + fileName);  </span><br><span class="line">            file.createNewFile();  </span><br><span class="line">            FileOutputStream fos = new FileOutputStream(file);  </span><br><span class="line">            byte[] temp = new byte[1024];  </span><br><span class="line">            int i = 0;  </span><br><span class="line">            while ((i = is.read(temp)) &gt; 0) &#123;  </span><br><span class="line">                fos.write(temp, 0, i);  </span><br><span class="line">            &#125;  </span><br><span class="line">            fos.close();  </span><br><span class="line">            is.close();  </span><br><span class="line">  </span><br><span class="line">            Intent intent = new Intent(Intent.ACTION_VIEW);  </span><br><span class="line">            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  </span><br><span class="line">            intent.setDataAndType(Uri.parse("file://" + file),  </span><br><span class="line">                    "application/vnd.android.package-archive");  </span><br><span class="line">            context.startActivity(intent);  </span><br><span class="line">        &#125; catch (Exception e) &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>详细文档说明：</p>
+		<h2 id="1、添加jar包"><a href="#1、添加jar包" class="headerlink" title="1、添加jar包"></a>1、添加jar包</h2><p> 将名为libs的文件夹放在您项目根目录下（里面有 BmobPay_版本号.jar 和3个支付宝的jar一共四个jar文件）</p>
+<h2 id="2、添加权限和内容"><a href="#2、添加权限和内容" class="headerlink" title="2、添加权限和内容"></a>2、添加权限和内容</h2><pre><code>&lt;!-- alipay sdk permission begin --&gt;  
+    &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;  
+    &lt;uses-permission android:name=&quot;android.permission.MODIFY_AUDIO_SETTINGS&quot; /&gt;  
+    &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;  
+    &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;  
+    &lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot; /&gt;  
+    &lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot; /&gt;  
+&lt;!-- alipay sdk permission end --&gt;  
+
+
+
+&lt;!-- bmob pay sdk activity begin ,please put below code into application tag --&gt;  
+&lt;activity  
+    android:name=&quot;com.alipay.sdk.app.H5PayActivity&quot;  
+    android:configChanges=&quot;orientation|keyboardHidden|navigation&quot;  
+    android:exported=&quot;false&quot;  
+    android:screenOrientation=&quot;behind&quot;  
+    android:windowSoftInputMode=&quot;adjustResize|stateHidden&quot; &gt;  
+&lt;/activity&gt;  
+&lt;activity  
+    android:name=&quot;com.bmob.pay.tool.PayActivity&quot;  
+    android:screenOrientation=&quot;portrait&quot;  
+    android:theme=&quot;@android:style/Theme.Translucent&quot; /&gt;  
+&lt;!-- bmob pay sdk activity end --&gt;  
+</code></pre><h2 id="3、类库说明"><a href="#3、类库说明" class="headerlink" title="3、类库说明"></a>3、类库说明</h2><p>com.bmob.pay.tool.BmobPay</p>
+<ul>
+<li>pay(double price, String name, PayListener listener)</li>
+<li>pay(double price, String name, String body, PayListener listener)</li>
+<li>PayListener     支付结果监听类com.bmob.pay.tool.PayListener 有成功、失败、未知结果、返回订单号等方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">类型</th>
+<th style="text-align:right">名称</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">Activity</td>
+<td style="text-align:right">activity</td>
+<td style="text-align:right">调用支付时的Activity</td>
+</tr>
+<tr>
+<td style="text-align:right">String</td>
+<td style="text-align:right">title</td>
+<td style="text-align:right">商品的名称,请注意不要有违禁字眼,可以为空只允许中文、数字、英文和下划线、英文破折号，否则过滤</td>
+</tr>
+<tr>
+<td style="text-align:right">String</td>
+<td style="text-align:right">descript</td>
+<td style="text-align:right">商品的详情描述,请注意不要有违禁字眼,可以为空只允许中文、数字、英文和下划线、英文破折号，否则过滤</td>
+</tr>
+<tr>
+<td style="text-align:right">double</td>
+<td style="text-align:right">price</td>
+<td style="text-align:right">商品的价格,建议测试用0.02</td>
+</tr>
+<tr>
+<td style="text-align:right">boolean</td>
+<td style="text-align:right">aliOrWetchat</td>
+<td style="text-align:right">支付方式：true为支付宝支付，false为微信支付</td>
+</tr>
+<tr>
+<td style="text-align:right">Plistener</td>
+<td style="text-align:right">listener</td>
+<td style="text-align:right">支付结果监听类c.b.PListener有成功、失败、未知结果、返回订单号等方法</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>payByWX(double price, String name, PayListener listener)</li>
+<li>payByWX(double price, String name, String body, PayListener listener)<br>调用微信支付，要安装插件(如果没有安装,会监听器的fail方法会返回-3错误码)，插件在sdk文档的plugin文件夹下，demo有通过assets安装的示例</li>
+<li>query(String orderId, OrderQueryListener listener)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">类型</th>
+<th style="text-align:right">名称</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">Activity</td>
+<td style="text-align:right">activity</td>
+<td style="text-align:right">调用查询订单时的Activity</td>
+</tr>
+<tr>
+<td style="text-align:right">String</td>
+<td style="text-align:right">orderId</td>
+<td style="text-align:right">支付订单号,不可为空</td>
+</tr>
+<tr>
+<td style="text-align:right">OrderQueryListener</td>
+<td style="text-align:right">listener</td>
+<td style="text-align:right">查询结果监听类c.b.QListener有成功、失败等方法</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4、示例代码"><a href="#4、示例代码" class="headerlink" title="4、示例代码"></a>4、示例代码</h2><pre><code>package com.subzero.dictionary.pay;  
+
+import java.io.File;  
+import java.io.FileOutputStream;  
+import java.io.InputStream;  
+import android.app.Activity;  
+import android.app.ProgressDialog;  
+import android.content.Context;  
+import android.content.Intent;  
+import android.net.Uri;  
+import android.os.Environment;  
+import android.widget.Toast;  
+import com.bmob.pay.tool.BmobPay;  
+import com.bmob.pay.tool.PayListener;  
+
+/** 
+ * Bmob支付宝支付示例 
+* @link http://docs.bmob.cn/androidpay/index.html?menukey=fast_start&amp;key=start_android_pay 
+*/  
+public class Pay {  
+
+    // 申请的Bmob AppId  
+    private String APPID = &quot;换成自己申请的&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;&quot;&gt;AppId&lt;/span&gt;&lt;span style=&quot;font-family: Arial, Helvetica, sans-serif;&quot;&gt;&quot;;&lt;/span&gt;  
+    private BmobPay bmobPay;  
+
+    private ProgressDialog dialog;  
+
+    private Context context;  
+
+    public Pay(Context context) {  
+        this.context = context;  
+    }  
+
+    // 调用支付宝支付  
+    public void payByAli(String name, final double price) {  
+        // 必须先初始化  
+        BmobPay.init(context, APPID);  
+
+        // 初始化BmobPay对象,可以在支付时再初始化  
+        bmobPay = new BmobPay((Activity) context);  
+        showDialog(&quot;正在获取订单...&quot;);  
+        /** 
+        * name 商品名称 price 价格 
+        */  
+        bmobPay.pay(price, name, &quot;来自Android客户端&quot;, new PayListener() {  
+        // 因为网络等原因,支付结果未知(小概率事件),出于保险起见稍后手动查询  
+        @Override  
+        public void unknow() {  
+            Toast.makeText(context, &quot;支付结果未知,请稍后手动查询&quot;, Toast.LENGTH_SHORT)  
+                    .show();  
+            hideDialog();  
+        }  
+
+        // 支付成功,如果金额较大请手动查询确认  
+        @Override  
+        public void succeed() {  
+            Toast.makeText(context, &quot;支付成功!&quot;, Toast.LENGTH_SHORT).show();  
+            hideDialog();  
+        }  
+
+        // 无论成功与否,返回订单号  
+        @Override  
+        public void orderId(String orderId) {  
+            // 此处应该保存订单号,比如保存进数据库等,以便以后查询  
+            showDialog(&quot;获取订单成功!请等待跳转到支付页面~&quot;);  
+        }  
+
+        // 支付失败,原因可能是用户中断支付操作,也可能是网络原因  
+        @Override  
+        public void fail(int code, String reason) {  
+            Toast.makeText(context, &quot;支付中断!&quot;, Toast.LENGTH_SHORT).show();  
+            hideDialog();  
+        }  
+    });  
+}  
+
+void showDialog(String message) {  
+    if (dialog == null) {  
+        dialog = new ProgressDialog(context);  
+        dialog.setCancelable(false);  
+    }  
+    dialog.setMessage(message);  
+    dialog.show();  
+}  
+
+void hideDialog() {  
+    if (dialog != null &amp;&amp; dialog.isShowing())  
+        try {  
+            dialog.dismiss();  
+        } catch (Exception e) {  
+        }  
+}  
+
+void installBmobPayPlugin(String fileName) {  
+    try {  
+        InputStream is = context.getAssets().open(fileName);  
+        File file = new File(Environment.getExternalStorageDirectory()  
+                + File.separator + fileName);  
+        file.createNewFile();  
+        FileOutputStream fos = new FileOutputStream(file);  
+        byte[] temp = new byte[1024];  
+        int i = 0;  
+        while ((i = is.read(temp)) &gt; 0) {  
+            fos.write(temp, 0, i);  
+        }  
+        fos.close();  
+        is.close();  
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);  
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  
+        intent.setDataAndType(Uri.parse(&quot;file://&quot; + file),  
+                &quot;application/vnd.android.package-archive&quot;);  
+        context.startActivity(intent);  
+    } catch (Exception e) {  
+        e.printStackTrace();  
+    }  
+}  
+
+} 
+</code></pre><p>详细文档说明：</p>
 <p><a href="http://docs.bmob.cn/androidpay/index.html?menukey=fast_start&amp;key=start_android_pay" target="_blank" rel="external">点击此处</a></p>
   
 	</div>
